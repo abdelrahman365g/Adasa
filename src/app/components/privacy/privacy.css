@@ -1,0 +1,46 @@
+.border-dark-soft { border-color: #262626 !important; }
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(38,38,38,.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38,38,38,.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.glow-orange {
+  width: 288px;
+  height: 288px;
+  background: rgba(249,115,22,.2);
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.text-orange { color: #f97316; }
+.text-orange-soft { color: rgba(253,186,116,.8); }
+.hover-white:hover { color: #fff !important; }
+.hover-orange:hover { color: #fb923c; }
+
+.icon-soft {
+  width: 64px;
+  height: 64px;
+  background: rgba(249,115,22,.1);
+  border: 1px solid rgba(249,115,22,.3) !important;
+}
+
+.alert-soft-orange {
+  background: rgba(249,115,22,.1);
+  border-color: rgba(249,115,22,.2) !important;
+}
+
+.step-badge {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg,#f97316,#facc15);
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+}

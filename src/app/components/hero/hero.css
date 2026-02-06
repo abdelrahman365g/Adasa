@@ -1,0 +1,112 @@
+p {
+  margin: 0 !important;
+}
+.hero {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+}
+.hero-glow-left {
+  top: 10%;
+  left: 15%;
+  background: rgba(249, 115, 22, 0.15);
+}
+.hero-glow-right {
+  bottom: 10%;
+  right: 15%;
+  background: rgba(250, 204, 21, 0.12);
+}
+
+.hero-badge {
+  background: #f973161a;
+  border: 1px solid #f973164d;
+  font-weight: 500;
+}
+.fit-content {
+  width: fit-content;
+}
+.hero-title {
+  font-weight: 800;
+}
+.hero-title span {
+  background: linear-gradient(to left, #f97316, #facc15);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  color: #9ca3af;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(to left, #f97316, #ea580c);
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 26px;
+  font-weight: 600;
+  border: none;
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: #e5e5e5;
+  border-radius: 14px;
+  padding: 12px 26px;
+  border: 1px solid #262626;
+}
+
+.hero-btn-secondary:hover {
+  border-color: #f97316;
+  color: #f97316;
+}
+
+.hero-stats h4 {
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero-stats span {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.glass-card {
+  background: rgba(22, 22, 22, 0.8);
+  border: 1px solid #262626;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+}
+
+.stats-icon {
+  font-size: 1.5rem;
+  color: #f97316;
+}
+
+.stats-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to left, #f97316, #facc15);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats-label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}

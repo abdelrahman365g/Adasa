@@ -1,0 +1,134 @@
+.text-orange {
+  color: #f97316;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(38,38,38,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38,38,38,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.blob-orange {
+  width: 384px;
+  height: 384px;
+  background: rgba(249, 115, 22, 0.2);
+  top: 25%;
+  left: 25%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.blob-yellow {
+  width: 320px;
+  height: 320px;
+  background: rgba(234, 179, 8, 0.1);
+  bottom: 25%;
+  right: 25%;
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.gradient-text-404 {
+  font-size: 180px;
+  background: linear-gradient(90deg, #f97316, #eab308, #f97316);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-orange-blur {
+  color: rgba(249, 115, 22, 0.2);
+  filter: blur(16px);
+}
+
+.icon-wrapper {
+  width: 112px;
+  height: 112px;
+}
+
+.icon-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(249,115,22,.2), rgba(234,179,8,.2));
+  border: 1px solid rgba(249,115,22,.3) !important;
+  border-radius: 50%;
+}
+
+.decor-square {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: #f97316;
+  border-radius: 6px;
+  transform: rotate(12deg);
+  animation: bounce 1s infinite;
+}
+
+.decor-circle {
+  position: absolute;
+  bottom: -4px;
+  left: -12px;
+  width: 16px;
+  height: 16px;
+  background: #eab308;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.btn-primary-custom {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, #f97316, #eab308);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary-custom:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary-custom {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background: transparent;
+  border: 1px solid #262626;
+  color: #fff;
+}
+
+.btn-secondary-custom:hover {
+  border-color: #f97316 !important;
+}
+
+.link-orange {
+  color: #f97316;
+  text-decoration: none;
+}
+
+.link-orange:hover {
+  color: #fb923c;
+  text-decoration: underline;
+}
+.border-dark-subtle{
+    border-color: #262626 !important;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(12deg); }
+  50% { transform: translateY(-6px) rotate(12deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

@@ -1,0 +1,143 @@
+<article class="article-page min-vh-100">
+  <div class="position-relative hero-section overflow-hidden">
+    <img
+      [src]="post?.image"
+      [alt]="post?.title"
+      class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+    />
+
+    <div class="hero-overlay-gradient"></div>
+    <div class="hero-overlay-side"></div>
+
+    <div class="position-absolute top-0 start-0 end-0 p-4">
+      <nav
+        class="breadcrumb-glass d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill border small"
+      >
+        <a routerLink="/home" class="text-white-70"
+          ><i class="fa-solid fa-home"></i
+        ></a>
+        <i class="fa-solid fa-chevron-left text-white-30 small"></i>
+        <a routerLink="/blog" class="text-white-70">المدونة</a>
+        <i class="fa-solid fa-chevron-left text-white-30 small"></i>
+        <span class="text-orange fw-semibold">{{ post?.category }}</span>
+      </nav>
+    </div>
+
+    <div class="position-absolute bottom-0 start-0 end-0 p-4 p-md-5">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+          <a
+            [routerLink]="['/blog', post?.category]"
+            class="badge-category rounded-pill px-3 py-2 fw-bold text-white text-decoration-none"
+          >
+            تقنيات
+          </a>
+
+          <div class="d-flex align-items-center gap-4 text-white-70 small">
+            <span
+              ><i class="fa-regular fa-calendar me-1"></i>
+              {{ post?.date }}</span
+            >
+            <span
+              ><i class="fa-regular fa-clock me-1"></i>{{ post?.readTime }}
+            </span>
+          </div>
+        </div>
+
+        <h1 class="text-white fw-bold display-5 display-lg-4 mb-4">
+          {{ post?.title }}
+        </h1>
+
+        <div
+          class="author-glass d-inline-flex align-items-center gap-3 p-3 rounded-4 border"
+        >
+          <img
+            [src]="post?.author?.image"
+            class="rounded-circle"
+            width="56"
+            height="56"
+            [alt]="post?.author?.name"
+          />
+          <div>
+            <p class="fw-bold text-white mb-0">{{ post?.author?.name }}</p>
+            <p class="small text-white-60 mb-0">{{ post?.author?.role }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-8 order-2 order-lg-1">
+        <div class="quote-box p-4 rounded-4 border mb-5">
+          <p class="fs-5 fst-italic text-light mb-0">"{{ post?.excerpt }}"</p>
+        </div>
+
+        <div class="article-content">
+          <p class="text-neutral fs-5 mb-4">
+            {{ intro }}
+          </p>
+
+          @for (section of sections; track $index; let i = $index) {
+            <h2
+              [id]="'section-' + i"
+              class="section-title d-flex align-items-center gap-3 mt-5 mb-4"
+            >
+              <span
+                class="icon-box rounded-3 border d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-camera"></i>
+              </span>
+              {{ section.label }}
+            </h2>
+            <p class="text-neutral fs-5 mb-4">
+              {{ section.content }}
+            </p>
+          }
+        </div>
+
+        <div class="box-dark p-4 rounded-4 border mt-5">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div
+              class="icon-box rounded-3 border d-flex align-items-center justify-content-center"
+            >
+              <i class="fa-solid fa-tags"></i>
+            </div>
+            <h5 class="text-white fw-bold mb-0">الوسوم</h5>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            @for (tag of post?.tags; track $index) {
+              <span class="tag-pill">#{{ tag }}</span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-lg-4 order-1 order-lg-2">
+        <div class="sticky-top sidebar-stack">
+          <div class="box-dark p-4 rounded-4 border mb-4">
+            <h5 class="text-white fw-bold mb-3">محتويات المقال</h5>
+
+            <nav class="d-flex flex-column gap-2">
+              @for (section of sections; track $index; let i = $index) {
+                <a
+                  [routerLink]="[]"
+                  [fragment]="'section-' + i"
+                  class="toc-link"
+                >
+                  {{ section.label }}
+                </a>
+              }
+            </nav>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</article>
+<app-suggested-articles
+  [category]="post?.category"
+  [id]="post?.id"
+></app-suggested-articles>

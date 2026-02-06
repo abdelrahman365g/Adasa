@@ -1,0 +1,141 @@
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(38, 38, 38, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 38, 38, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.glow {
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  position: absolute;
+}
+
+.glow-orange {
+  background: rgba(255, 140, 0, 0.1);
+  left: 25%;
+  top: 0;
+}
+
+.glow-yellow {
+  background: rgba(255, 200, 0, 0.05);
+  right: 25%;
+  bottom: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff8c00, #ffcc00);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-label {
+  background: #f973161a;
+  border: 1px solid #f973164d;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #f97316;
+}
+
+.filter-bar {
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #262626;
+  top: 80px;
+  z-index: 1000;
+}
+
+.input-dark {
+  background: #161616;
+  border: 1px solid #262626;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.input-dark::placeholder {
+  color: #888;
+}
+
+.search-icon {
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filter-active {
+  font-weight: 600;
+  background: linear-gradient(to right, #ff8c00, #ff7a00) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-dark-outline {
+  background: #161616;
+  color: #aaa;
+  border: 1px solid #262626 !important;
+}
+
+.btn-dark-outline:hover {
+  border-color: rgba(255, 140, 0, 0.3) !important;
+  color: #fff;
+}
+
+.view-toggle {
+  background: #161616;
+  border: 1px solid #262626;
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.view-btn {
+  color: #aaa !important;
+}
+
+.view-btn.active {
+  background: #ff8c00 !important;
+  color: #fff !important;
+}
+
+.page-number.disabled {
+  color: #555 !important;
+  cursor: not-allowed;
+  & i {
+    color: #555 !important;
+  }
+}
+.page-number.disabled:hover {
+  border-color: #262626;
+    & i {
+    color: #555 !important;
+  }
+}
+.page-number {
+  min-width: 44px;
+  height: 44px;
+  background: #161616;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-number.active {
+  background: linear-gradient(to right, #ff8c00, #ff7a00);
+  color: #fff;
+  border: none;
+}
+
+.page-number:hover {
+  border-color: rgba(255, 140, 0, 0.5);
+  color: #fff;
+  & i {
+    color: #fff !important;
+  }
+}
+.content-offset {
+  scroll-margin-top: 146px;
+}

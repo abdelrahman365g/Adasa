@@ -1,0 +1,85 @@
+.categories-section {
+  background-color: #111111;
+  border-color: #262626 !important;
+}
+
+.section-label {
+  background: #f973161a;
+  border: 1px solid #f973164d;
+  width: fit-content;
+  color: #f97316;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ping-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #f97316;
+  opacity: 0.75;
+  animation: ping 1.5s infinite;
+}
+
+.dot-circle {
+  width: 8px;
+  height: 8px;
+  background: #f97316;
+  border-radius: 50%;
+  position: relative;
+}
+
+.category-card {
+  background: #161616;
+  border-color: #262626 !important;
+  transition: all 0.3s;
+}
+
+.category-card:hover {
+  background: linear-gradient(to bottom right, #f97316, #facc15);
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.2) !important;
+  color: #f97316;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .icon-box {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-color: transparent;
+}
+
+.arrow-indicator {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 32px;
+  height: 32px;
+  background: #262626;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .arrow-indicator {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

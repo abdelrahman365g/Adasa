@@ -1,0 +1,84 @@
+.related-section{
+  border-color:#262626!important;
+}
+
+.icon-box-lg{
+  width:48px;
+  height:48px;
+  border-radius:16px;
+  background:rgba(255,140,0,.1);
+  border:1px solid rgba(255,140,0,.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ff8c00;
+  font-size:1.25rem;
+}
+
+.text-orange{color:#ff8c00;}
+.related-link:hover{color:#ff9f1a;}
+.arrow-anim{transition:.3s;}
+.related-link:hover .arrow-anim{transform:translateX(-5px);}
+
+.related-card{
+  background:#111;
+  border-radius:1.25rem;
+  overflow:hidden;
+  border:1px solid #262626;
+  transition:.5s;
+  height:100%;
+}
+.related-card:hover{
+  border-color:rgba(255,140,0,.4);
+  transform:translateY(-4px);
+}
+
+.img-wrap{
+  position:relative;
+  height:190px;
+  overflow:hidden;
+}
+.img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s;
+}
+.related-card:hover img{
+  transform:scale(1.1);
+}
+
+.img-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,#111,transparent);
+}
+
+.badge-orange{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  background:#ff8c00;
+  color:#fff;
+  font-size:.7rem;
+  font-weight:700;
+  padding:.25rem .6rem;
+  border-radius:999px;
+}
+
+.card-title-related{
+  font-weight:700;
+  color:#fff;
+  margin-bottom:.75rem;
+  transition:.3s;
+}
+.related-card:hover .card-title-related{
+  color:#ff8c00;
+}
+
+.author-mini{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  object-fit:cover;
+}

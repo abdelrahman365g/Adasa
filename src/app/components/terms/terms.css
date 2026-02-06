@@ -1,0 +1,49 @@
+.border-dark-soft { border-color: #262626 !important; }
+.main-container{
+  max-width: 768px;
+}
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(38,38,38,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38,38,38,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.glow-yellow {
+  width: 288px;
+  height: 288px;
+  background: rgba(234,179,8,0.2);
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.text-orange { color: #f97316 !important; }
+.text-yellow { color: #eab308 !important; }
+.text-yellow-soft { color: rgba(253,224,71,0.8); }
+.hover-white:hover { color: #ffffff !important; }
+.hover-orange:hover { color: #fb923c !important; }
+
+.icon-orange-soft {
+  width: 64px;
+  height: 64px;
+  background: rgba(249,115,22,0.1);
+  border-color: rgba(249,115,22,0.3) !important;
+}
+
+.alert-yellow {
+  background: rgba(234,179,8,0.1) !important;
+  border-color: rgba(234,179,8,0.2) !important;
+}
+
+.step-badge {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #f97316, #eab308);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}

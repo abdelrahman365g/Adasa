@@ -1,0 +1,109 @@
+.blog-card {
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 1rem;
+  transition: 0.4s ease;
+}
+
+.animate-card {
+  animation: fadeUp .8s ease forwards;
+  animation-delay: .5s;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-image {
+  height: 13rem;
+}
+
+.img-hover {
+  transition: transform .7s ease;
+}
+
+.blog-card:hover .img-hover {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
+  opacity: 0;
+  transition: .5s;
+}
+
+.blog-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.category-badge {
+  background: rgba(10,10,10,.8);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border: 1px solid #333333;
+  font-size: .75rem;
+}
+
+.text-neutral {
+  color: #9ca3af;
+}
+
+.meta-dot {
+  width: 4px;
+  height: 4px;
+  background: #525252;
+  border-radius: 50%;
+}
+
+.title-hover {
+  transition: color .3s;
+}
+
+.blog-card:hover .title-hover {
+  color: #f97316;
+}
+
+.footer-border {
+  border-color: #262626 !important;
+}
+
+.author-img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border: 2px solid #262626;
+}
+
+.arrow-circle {
+  width: 32px;
+  height: 32px;
+  background: rgba(249,115,22,.1);
+  border: 1px solid rgba(249,115,22,.2);
+  transition: .3s;
+}
+
+.arrow-icon {
+  color: #f97316;
+  font-size: .8rem;
+  transition: .3s;
+  transform: rotate(180deg);
+}
+
+.blog-card:hover .arrow-circle {
+  background: #f97316;
+  border-color: transparent;
+}
+
+.blog-card:hover .arrow-icon {
+  color: #fff;
+}

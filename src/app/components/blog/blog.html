@@ -1,0 +1,141 @@
+<div class="min-vh-100">
+  <section class="position-relative py-5 overflow-hidden hero-bg">
+    <div class="position-absolute top-0 start-0 w-100 h-100 hero-grid"></div>
+
+    <div class="position-absolute top-0 start-25 glow glow-orange"></div>
+    <div class="position-absolute bottom-0 end-25 glow glow-yellow"></div>
+
+    <div class="container position-relative text-center py-5">
+      <span
+        class="section-label d-inline-flex align-items-center gap-2 mb-4 px-3 py-2 rounded-pill"
+      >
+        <i class="fa-regular fa-newspaper"></i>
+        مدونتنا
+      </span>
+
+      <h1 class="display-4 fw-bold text-white mb-4">
+        استكشف <span class="gradient-text">مقالاتنا</span>
+      </h1>
+
+      <p class="fs-5 text-secondary mx-auto hero-desc">
+        اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث
+      </p>
+    </div>
+  </section>
+
+  <div class="sticky-top filter-bar">
+    <div class="container py-3">
+      <div class="row g-3 align-items-center justify-content-between">
+        <div class="col-12 col-md-4 position-relative">
+          <i
+            class="fa-solid fa-magnifying-glass position-absolute search-icon text-secondary"
+          ></i>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            (input)="searchPosts()"
+            class="form-control input-dark ps-4 pe-5"
+            placeholder="ابحث في المقالات..."
+          />
+        </div>
+
+        <div
+          class="col-12 col-md-8 d-flex flex-wrap justify-content-center justify-content-md-end gap-2"
+        >
+          <button
+            class="btn btn-dark-outline rounded-3 filter-active"
+            [class.filter-active]="activeCategory === 'all'"
+            (click)="resetPosts()"
+          >
+            جميع المقالات
+          </button>
+          @for (category of categories; track $index) {
+            <button
+              class="btn btn-dark-outline rounded-3"
+              [class.filter-active]="activeCategory === category.name"
+              (click)="filterPosts(category.name)"
+            >
+              {{ category.name }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="container py-5 content-offset">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <p class="text-secondary mb-0">
+        عرض <span class="fw-bold text-white">{{ posts.length }}</span> مقالات
+      </p>
+
+      <div
+        class="d-flex align-items-center justify-content-center py-1 px-2 view-toggle"
+      >
+        <button
+          class="bg-transparent p-2 view-btn rounded-3"
+          [class.active]="view == 'grid'"
+          (click)="changeView('grid')"
+        >
+          <i class="fa-solid fa-th m-0"></i>
+        </button>
+
+        <button
+          class="bg-transparent p-2 view-btn rounded-3"
+          [class.active]="view == 'list'"
+          (click)="changeView('list')"
+        >
+          <i class="fa-solid fa-list"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      @for (post of pagedPosts; track $index) {
+        @if (view == "grid") {
+          <div class="col-6 col-md-4">
+            <app-article-card [post]="post"></app-article-card>
+          </div>
+        } @else {
+          <app-article-card-list [post]="post"></app-article-card-list>
+        }
+      }
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center gap-2 mt-5">
+      <button
+        class="page-number"
+        [class.disabled]="currentPage === 1"
+        [disabled]="currentPage === 1"
+        (click)="getNextPage(currentPage - 1)"
+      >
+        <i class="fa-solid fa-chevron-right text-secondary small"></i>
+      </button>
+
+      <div class="d-flex gap-1">
+        @for (page of pages; track $index) {
+          <button
+            class="page-number"
+            [class.active]="page === currentPage"
+            (click)="getNextPage(page)"
+          >
+            {{ page }}
+          </button>
+        }
+      </div>
+
+      <button
+        class="page-number"
+        [class.disabled]="currentPage === totalPages"
+        [disabled]="currentPage === totalPages"
+        (click)="getNextPage(currentPage + 1)"
+      >
+        <i class="fa-solid fa-chevron-left text-secondary small"></i>
+      </button>
+    </div>
+
+    <p class="text-center text-secondary mt-3">
+      صفحة {{ currentPage }} من {{ totalPages }}
+    </p>
+  </section>
+</div>

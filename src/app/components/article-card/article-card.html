@@ -1,0 +1,64 @@
+<article class="blog-card card overflow-hidden animate-card h-100">
+  <a [routerLink]="['/post', post.id]" class="d-block text-decoration-none">
+    <div class="position-relative overflow-hidden card-image">
+      <img
+        [src]="post.image"
+        [alt]="post.title"
+        class="w-100 h-100 object-fit-cover img-hover"
+      />
+
+      <div class="image-overlay"></div>
+
+      <div class="position-absolute top-0 end-0 p-3">
+        <span class="category-badge rounded-pill px-3 py-1 fw-semibold small">
+          {{ post.category }}
+        </span>
+      </div>
+    </div>
+
+    <div class="p-4 p-lg-4">
+      <div class="d-flex align-items-center gap-3 small text-neutral mb-3">
+        <span class="d-flex align-items-center gap-1">
+          <i class="fa-regular fa-clock"></i>
+          {{ post.readTime }}
+        </span>
+
+        <span class="meta-dot"></span>
+
+        <span>{{ post.date }}</span>
+      </div>
+
+      <h3 class="fs-5 fw-bold text-white mb-3 title-hover">
+        {{ post.title }}
+      </h3>
+
+      <p class="text-secondary small mb-4">
+        {{ post.excerpt }}
+      </p>
+
+      <div
+        class="d-flex align-items-center justify-content-between pt-3 border-top footer-border"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <img
+            [src]="post.author.image"
+            [alt]="post.author.name"
+            class="rounded-circle author-img"
+          />
+          <div>
+            <p class="small fw-medium text-white mb-0">
+              {{ post.author.name }}
+            </p>
+            <p class="text-secondary small mb-0">{{ post.author.role }}</p>
+          </div>
+        </div>
+
+        <div
+          class="arrow-circle d-flex align-items-center justify-content-center rounded-circle"
+        >
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </div>
+      </div>
+    </div>
+  </a>
+</article>
