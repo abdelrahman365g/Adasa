@@ -2,8 +2,8 @@ export enum CategoryEnum {
   LIGHTING = "إضاءة",
   PORTRAIT = "بورتريه",
   LANDSCAPE = "مناظر طبيعية",
-  TECHNIQUES = "تقنيات",
-  EQUIPMENT = "معدات"
+  TECHNIQUES = "تقنيات التصوير",
+  EQUIPMENT = "معدات التصوير"
 }
 
 export enum CategoryColor {

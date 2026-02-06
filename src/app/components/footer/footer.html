@@ -6,7 +6,7 @@
     <div class="row gy-5">
       <div class="col-lg-4">
         <a
-          href="/home"
+          routerLink="/home"
           class="d-flex align-items-center gap-3 mb-4 text-decoration-none"
         >
           <div class="footer-logo">
@@ -21,20 +21,32 @@
         </p>
 
         <div class="d-flex gap-2 mt-4">
-          <a class="social-btn" href="https://www.x.com" target="_blank">
+          <a
+            class="social-btn"
+            href="https://twitter.com/adasah"
+            target="_blank"
+          >
             <i class="fa-brands fa-x-twitter"></i>
           </a>
           <a
             class="social-btn"
-            href="https://www.github.com/abdelrahman365g"
+            href="https://www.github.com/adasah"
             target="_blank"
           >
             <i class="fa-brands fa-github"></i>
           </a>
-          <a class="social-btn" href="https://www.linkedin.com" target="_blank">
+          <a
+            class="social-btn"
+            href="https://www.linkedin.com/company/adasah"
+            target="_blank"
+          >
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a class="social-btn" href="https://www.youtube.com" target="_blank">
+          <a
+            class="social-btn"
+            href="https://www.youtube.com/@adasah"
+            target="_blank"
+          >
             <i class="fa-brands fa-youtube"></i>
           </a>
         </div>
@@ -43,19 +55,23 @@
       <div class="col-lg-2 col-md-4">
         <h6 class="footer-title">تصفح</h6>
         <ul class="footer-links">
-          <li><a href="/">الرئيسية</a></li>
-          <li><a href="/blog">المدونة</a></li>
-          <li><a href="/about">من نحن</a></li>
+          <li><a routerLink="/">الرئيسية</a></li>
+          <li><a routerLink="/blog">المدونة</a></li>
+          <li><a routerLink="/about">من نحن</a></li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-md-4">
         <h6 class="footer-title">التصنيفات</h6>
         <ul class="footer-links">
-          <li><a href="/blog?category=Lighting">الإضاءة</a></li>
-          <li><a href="/blog?category=Portrait">البورتريه</a></li>
-          <li><a href="/blog?category=Landscape">المناظر الطبيعية</a></li>
-          <li><a href="/blog?category=Techniques">تقنيات التصوير</a></li>
+          <li><a [routerLink]="['/blog', 'إضاءة']">الإضاءة</a></li>
+          <li><a [routerLink]="['/blog', 'بورتريه']">البورتريه</a></li>
+          <li>
+            <a [routerLink]="['/blog', 'مناظر طبيعية']">المناظر الطبيعية</a>
+          </li>
+          <li>
+            <a [routerLink]="['/blog', 'تقنيات التصوير']">تقنيات التصوير</a>
+          </li>
         </ul>
       </div>
 
@@ -87,8 +103,8 @@
         جميع الحقوق محفوظة.
       </p>
       <div class="d-flex gap-4">
-        <a href="/privacy">سياسة الخصوصية</a>
-        <a href="/terms">شروط الاستخدام</a>
+        <a routerLink="/privacy">سياسة الخصوصية</a>
+        <a routerLink="/terms">شروط الاستخدام</a>
       </div>
     </div>
   </div>
