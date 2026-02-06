@@ -93,7 +93,7 @@
     <div class="row g-4">
       @for (post of pagedPosts; track $index) {
         @if (view == "grid") {
-          <div class="col-6 col-md-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <app-article-card [post]="post"></app-article-card>
           </div>
         } @else {

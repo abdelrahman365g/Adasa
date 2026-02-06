@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { PostsService } from '../../services/posts-service';
 import { Post } from '../../models/article.interface';
 import { RouterLink } from '@angular/router';
@@ -10,7 +10,7 @@ import { CategoryEnum } from '../../models/category.enum';
   templateUrl: './suggested-articles.html',
   styleUrl: './suggested-articles.css',
 })
-export class SuggestedArticles implements OnInit {
+export class SuggestedArticles implements OnInit , OnChanges {
   @Input()category?:CategoryEnum;
   @Input()id?:number;
   posts:Post[]=[];
@@ -18,6 +18,11 @@ export class SuggestedArticles implements OnInit {
   constructor(private postsService:PostsService){}
 
   ngOnInit(): void {
+    if(this.category){
+    this.posts = this.postsService.getSuggestedPosts(this.category,this.id);
+    }
+  }
+  ngOnChanges(): void {
     if(this.category){
     this.posts = this.postsService.getSuggestedPosts(this.category,this.id);
     }

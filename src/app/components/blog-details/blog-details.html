@@ -137,7 +137,9 @@
     </div>
   </div>
 </article>
-<app-suggested-articles
-  [category]="post?.category"
-  [id]="post?.id"
-></app-suggested-articles>
+@if (post) {
+  <app-suggested-articles
+    [category]="post.category"
+    [id]="post.id"
+  ></app-suggested-articles>
+}
